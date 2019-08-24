@@ -1,0 +1,141 @@
+<html>
+<head>
+
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+</head>
+<body>
+    <!--Navbar-->
+    <div class="navbar">
+            
+        
+        <ul class="nav">
+            
+        
+            <li>   <button mat-button [matMenuTriggerFor]="menu"><b style="color:blue;font-size:19px;">Menu</b></button>
+                <mat-menu #menu="matMenu">
+                  <button mat-menu-item>Item 1</button>
+                  <button mat-menu-item>Item 2</button>
+                </mat-menu></li>
+        </ul>   
+        <div class="row">
+            <a class="dropdown-item" (click)="logOut()" style="cursor: pointer">LogOut</a>
+
+    </div> 
+        
+
+
+        
+    </div>
+        <!--Navbar-->
+<div class="container">
+       
+    
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+                <div class="example-container">
+                        <mat-form-field style="width:400px !important">  
+                          <input matInput placeholder="Enter the word to search" #term>
+                        </mat-form-field>
+
+                        <mat-form-field>
+                                <input matInput [matDatepicker]="picker" placeholder="Choose a date for tweets" #dates>
+                                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                                <mat-datepicker #picker></mat-datepicker>
+                              </mat-form-field>
+                      
+                        <button mat-button color="primary" (click)=search(term.value,dates.value)>Search</button>
+                      </div>
+        </div>
+
+    </div>
+
+<div class="row">
+    <div class="col-md-6 col-md-offset-3" *ngIf="statuses?.length>0;else other_content">
+ <!---The data will be displayed here --> 
+ <span>Pls see console for all data</span>
+ <ul>
+     <li *ngFor="let status of  statuses">
+            {{status.created_at}}
+     </li>
+ </ul>     
+ 
+
+    </div>
+
+    <div class="col-md-6 col-md-offset-3">
+            <ng-template #other_content> <h4>Please Search Above To See the Data here</h4>.</ng-template>
+    </div>
+            
+
+        
+
+    
+
+</div>
+<div class="row">
+<div class="col-sm-6 col-md-offset-3">
+    
+<div class="panel panel-body">
+        <div class="media">
+            <a class="media-left" href="#fake">
+                <img alt="" class="media-object img-rounded" src="assets/images/tweet.png" width="70" height="64">
+            </a>
+            <div class="media-body">
+                <h4 class="media-heading">Media heading</h4>
+                <p>Dolorem aspernatur rerum, iure? Culpa iste aperiam sequi, fuga, quasi rerum, eum, quo natus tenetur officia placeat.</p>
+                <ul class="nav nav-pills nav-pills-custom">
+                    <li><a href="#"><span class="glyphicon glyphicon-share-alt"></span></a></li>
+                    <li><a href="#"><span class="glyphicon glyphicon-retweet"></span></a></li>
+                    <li><a href="#"><span class="glyphicon glyphicon-star"></span></a></li>
+                    <li><a href="#"><span class="glyphicon glyphicon-option-horizontal"></span></a></li>
+                </ul>
+            </div>
+        </div>
+
+
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-sm-6 col-md-offset-3">
+    
+    <div class="panel panel-body">
+            <div class="media">
+                <a class="media-left" href="#fake">
+                    <img alt="" class="media-object img-rounded" src="assets/images/tweet.png" width="70" height="64">
+                </a>
+                <div class="media-body">
+                    <h4 class="media-heading">Media heading</h4>
+                    <p>Dolorem aspernatur rerum, iure? Culpa iste aperiam sequi, fuga, quasi rerum, eum, quo natus tenetur officia placeat.</p>
+                    <ul class="nav nav-pills nav-pills-custom">
+                        <li><a href="#"><span class="glyphicon glyphicon-share-alt"></span></a></li>
+                        <li><a href="#"><span class="glyphicon glyphicon-retweet"></span></a></li>
+                        <li><a href="#"><span class="glyphicon glyphicon-star"></span></a></li>
+                        <li><a href="#"><span class="glyphicon glyphicon-option-horizontal"></span></a></li>
+                    </ul>
+                </div>
+            </div>
+    
+    
+    </div>
+    </div>
+</div>
+
+
+
+
+</div>
+
+
+
+</body>
+
+
+
+
+
+
+
+</html>
